@@ -1,0 +1,301 @@
+
+.pages_global_top { 
+
+	width : 1024px; 
+	height : 272px;
+
+	float : none; 
+	clear : none; 
+	display : block; 
+
+	position : relative; 
+
+	margin : 0 auto; 
+
+	padding-top : 0px; 
+	padding-left : 0px; 
+	padding-right : 0px; 
+	padding-bottom : 0px; 
+	overflow:visible; 
+	background-image : url(/i/image/top.jpg); 
+	background-repeat : repeat;
+	background-position : 0 0;
+
+
+} 
+
+.pages_global_icons { 
+
+	width : 70px; 
+	height : 30px;
+
+	float : none; 
+	clear : none; 
+	display : block; 
+
+	position : absolute; 
+
+	margin-top : 0px; 
+	margin-left : 0px; 
+	margin-right : 0px; 
+	margin-bottom : 0px; 
+
+	padding-top : 0px; 
+	padding-left : 0px; 
+	padding-right : 0px; 
+	padding-bottom : 0px; 
+	overflow:visible; 
+	top : 50px; 
+	left : 770px; 
+
+} 
+
+.pages_global_menu { 
+
+	width : 800px; 
+	height : 45px;
+
+	font-family : Arial !important;
+	color : #990000 !important;
+	font-size : 12px !important;
+	font-weight : normal !important;
+	font-style : normal !important;
+	text-decoration : underline !important;
+
+	float : none; 
+	clear : none; 
+	display : block; 
+
+	position : absolute; 
+
+	margin : 0 auto; 
+
+	padding-top : 0px; 
+	padding-left : 0px; 
+	padding-right : 0px; 
+	padding-bottom : 0px; 
+	overflow:visible; 
+	top : 207px; 
+	left : 110px; 
+
+} 
+
+.pages_global_menu a:link, .pages_global_menu a:visited {
+
+	font-family : Arial !important;
+	color : #990000 !important;
+	font-size : 12px !important;
+	font-weight : normal !important;
+	font-style : normal !important;
+	text-decoration : underline !important;
+} 
+
+.pages_global_menu a:hover {
+
+	font-family : Tahoma !important;
+	color : #ffff99 !important;
+	font-size : 15px !important;
+	font-weight : normal !important;
+	font-style : normal !important;
+	text-decoration : underline !important;
+} 
+
+.pages_global_menu h1 {
+
+	font-family : Arial !important;
+	color : #990000 !important;
+	font-size : 12px !important;
+	font-weight : normal !important;
+	font-style : normal !important;
+	text-decoration : underline !important;
+} 
+
+.pages_global_telef { 
+
+	width : 350px; 
+	height : 160px;
+
+	font-family : Tahoma !important;
+	color : #272727 !important;
+	font-size : 12px !important;
+	font-weight : normal !important;
+	font-style : normal !important;
+	text-decoration : none !important;
+
+	float : none; 
+	clear : none; 
+	display : block; 
+
+	position : static; 
+
+	margin-top : 0px; 
+	margin-left : 0px; 
+	margin-right : 0px; 
+	margin-bottom : 0px; 
+
+	padding-top : 0px; 
+	padding-left : 0px; 
+	padding-right : 0px; 
+	padding-bottom : 0px; 
+	overflow:visible; 
+
+} 
+
+.pages_global_telef a:link, .pages_global_telef a:visited {
+
+	font-family : Tahoma !important;
+	color : #272727 !important;
+	font-size : 12px !important;
+	font-weight : normal !important;
+	font-style : normal !important;
+	text-decoration : none !important;
+} 
+
+.pages_global_telef a:hover {
+
+	font-family : Tahoma !important;
+	color : #272727 !important;
+	font-size : 12px !important;
+	font-weight : normal !important;
+	font-style : normal !important;
+	text-decoration : none !important;
+} 
+
+.pages_global_telef h1 {
+
+	font-family : Tahoma !important;
+	color : #272727 !important;
+	font-size : 12px !important;
+	font-weight : normal !important;
+	font-style : normal !important;
+	text-decoration : none !important;
+} 
+
+.pages_global_center { 
+
+	width : 1024px; 
+	height : 500px;
+
+	float : none; 
+	clear : none;
+
+
+	position : relative; 
+
+	margin : 0 auto; 
+
+	padding-top : 0px; 
+	padding-left : 0px; 
+	padding-right : 0px; 
+	padding-bottom : 0px; 
+	overflow:visible; 
+	background-image : url(/i/image/center.gif); 
+	background-repeat : repeat-y;
+	background-position : 0 0;
+
+
+} 
+
+.pages_global_text { 
+
+	width : 800px; 
+	height : 100px;
+
+	float : none; 
+	clear : none;
+
+
+	position : relative; 
+
+	margin : 0 auto; 
+
+	padding-top : 0px; 
+	padding-left : 0px; 
+	padding-right : 0px; 
+	padding-bottom : 0px; 
+	overflow:visible; 
+
+} 
+
+.pages_global_bottom { 
+
+	width : 1024px; 
+	height : 143px;
+
+	float : none; 
+	clear : none; 
+	display : block; 
+
+	position : static; 
+
+	margin : 0 auto; 
+
+	padding-top : 0px; 
+	padding-left : 0px; 
+	padding-right : 0px; 
+	padding-bottom : 0px; 
+	overflow:visible; 
+	background-image : url(/i/image/bottom.jpg); 
+	background-repeat : repeat;
+	background-position : 0 0;
+
+
+} 
+
+.pages_global_bottom_text { 
+
+	width : 800px; 
+	height : 100px;
+
+	font-family : Tahoma !important;
+	color : #272727 !important;
+	font-size : 12px !important;
+	font-weight : normal !important;
+	font-style : normal !important;
+	text-decoration : none !important;
+
+	float : none; 
+	clear : none; 
+	display : block; 
+
+	position : static; 
+
+	margin-left : 110px;
+
+	padding-top : 40px; 
+	padding-left : 0px; 
+	padding-right : 0px; 
+	padding-bottom : 0px; 
+	overflow:visible; 
+
+} 
+
+.pages_global_bottom_text a:link, .pages_global_bottom_text a:visited {
+
+	font-family : Tahoma !important;
+	color : #272727 !important;
+	font-size : 12px !important;
+	font-weight : normal !important;
+	font-style : normal !important;
+	text-decoration : none !important;
+} 
+
+.pages_global_bottom_text a:hover {
+
+	font-family : Tahoma !important;
+	color : #272727 !important;
+	font-size : 12px !important;
+	font-weight : normal !important;
+	font-style : normal !important;
+	text-decoration : none !important;
+} 
+
+.pages_global_bottom_text h1 {
+
+	font-family : Tahoma !important;
+	color : #272727 !important;
+	font-size : 12px !important;
+	font-weight : normal !important;
+	font-style : normal !important;
+	text-decoration : none !important;
+} 

@@ -1,0 +1,178 @@
+img {
+	border : 1px solid #eeeeee;
+	padding : 5px;
+	margin-top : 3px;
+	margin-bottom : 3px;
+	margin-right : 10px;
+	margin-left : 10px;
+
+}
+
+#contacts {
+	text-align: justify;
+}
+
+#contacts img{
+	border : 0;
+	padding : 5px;
+	margin: 0;
+
+}
+
+.pages_global_icons_link img {
+    border: 0px none;
+    margin: 1px 0 0 0;
+    padding: 0px;
+}
+
+
+
+table.etable {
+	width : 100%;
+	border : 1px solid #d2d4d3;
+	border-spacing	: 4px;
+	width		: 100%;
+	empty-cells	: show;
+
+}
+
+.etable td {
+	border : 1px solid #d2d4d3;
+
+}
+
+h2 {
+
+	font-family : Arial !important;
+	color : #000000 !important;
+	font-size : 18px !important;
+	font-weight : normal !important;
+	font-style : normal !important;
+	text-decoration : none !important;
+} 
+
+
+a.pages_counter, a.pages_counter:link, a.pages_counter:hover, a.pages_counter:visited {
+	padding:5px; 
+	display:block; 
+	width:20px; 
+	margin:5px; 
+	float:left;
+	background-color1 : #eeeeee;
+	border:0px solid #dddddd;
+	color : #0000ff !important;
+}
+
+a.pages_counter_a, a.pages_counter_a:link, a.pages_counter_a:hover, a.pages_counter_a:visited  {
+	padding:5px; 
+	display:block; 
+	width:20px; 
+	margin:5px; 
+	float:left; 
+	border:0px solid #dddddd;
+	font-weight : bold !important;
+	color : #ff0000 !important;
+}
+
+p {
+    line-height: 1.5em;
+    margin: 0 !important;
+    padding: 5px 0 !important;
+}
+
+#realt_urlz a:link, #realt_urlz a:visited {
+    color: #990000 !important;
+    display: block;
+    float: left;
+    font-size: 14px !important;
+    height: 12px;
+    margin: 1px 5px 1px 10px;
+    min-width: 15px;
+}
+
+td#realt_urlz {
+	width: 438px;
+}
+
+td.img_arrow {
+    width: 32px;
+}
+
+td.name_realt_category {
+    width: 330px;  
+}
+
+#realt_urlz a:hover {
+    color: #990000 !important;
+    text-decoration: none !important;
+}
+
+td.img_arrow img {
+    margin: 0;
+    padding: 0;
+}
+
+a.read_more:link, a.read_more:visited {
+    color: #990000 !important;
+    font-size : 14px !important;
+}
+
+a.read_more:hover {
+    color: #990000 !important;
+    text-decoration: none !important;
+}
+
+
+h2 a:link, h2 a:visited {
+    color: #990000 !important;
+    font-size : 18px !important;
+}
+
+h2 a:hover {
+    color: #990000 !important;
+    text-decoration: none !important;
+}
+
+
+#id_0 p, #id_1 p, #id_2 p, #id_3 p, #id_4 p,
+#id_5 p, #id_6 p, #id_7 p, #id_8 p, #id_9 p,
+#id_10 p, #id_11 p, #id_12 p {
+    line-height: 1em;
+    margin: 0 !important;
+    padding: 1px 0 !important;
+}
+
+#zapros {
+	font-family: Arial !important;
+	color: #990000 !important;
+	font-size: 12px !important;
+}
+
+.batton_zapros {
+    background: url("/i/image/botton_zapros.png") no-repeat scroll center top transparent;
+    border: 0 none;
+    cursor: pointer;
+    width: 113px;
+    height: 26px;
+    margin: 0 0 0 0;
+    padding: 0;
+}
+
+#dom {
+    background: #f9f9f5 url("/i/image/dom.jpg") no-repeat left top; 
+    border-bottom: 2px solid #E1E1CE;
+    border-top: 1px solid #E1E1CE;
+    height: 250px;
+    margin: 0 -27px 0 -33px;
+    padding: 10px 9px 10px 31px;
+    width: 820px;
+}
+
+.menu {
+    float: left;
+    height: 40px;
+    margin: 0;
+    min-width: 50px;
+    padding: 0 17px 10px;
+
+}

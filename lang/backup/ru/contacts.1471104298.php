@@ -1,0 +1,6 @@
+<?php
+
+    $g_lang["head_no_tags"] = "Контакты";
+    $g_lang["text"] = "<div class=\"uk-grid\">  <div class=\"uk-width-large-1-3 uk-width-small-1-3\">  <div class=\"uk-panel\">  <div class=\"uk-panel-title\">Офис в Ялте</div>    <p>298607, ул. Строителей, 6А, лит.&quot;В&quot;, 2 этаж<br />  8 (800) 500 43 07<br />  +7 (978) 011 99 44</p>  </div>  </div>    <div class=\"uk-width-large-1-3 uk-width-small-1-3\">  <div class=\"uk-panel\">  <div class=\"uk-panel-title\">Офис в Москве</div>    <p>107553, ул. Амурская дом 1, стр. 13<br />  +7 (495) 235 60 20</p>  </div>  </div>    <div class=\"uk-width-large-1-3 uk-hidden-small\">  <div class=\"uk-panel\">  <div class=\"uk-panel-title\">Для заявок:</div>    <div class=\"uk-grid\">  <div class=\"uk-width-2-4\">  <p>Офис<br />  Отдел продаж<br />  Технический отдел</p>  </div>    <div class=\"uk-width-2-4 uk-padding-remove uk-text-right\">  <p><a href=\"mailto:info@arhitek-group.ru\">info@arhitek-group.ru</a><br />  <a href=\"mailto:sale@arhitek-group.ru\">sales@arhitek-group.ru</a><br />  <a href=\"mailto:ing@arhitek-group.ru\">ing@arhitek-group.ru</a></p>  </div>  </div>  </div>  </div>  </div>  ";
+
+?>
