@@ -1,0 +1,262 @@
+#slider_and_props_cont{
+  clear: both;
+  width: 100%;
+  height:350px;
+}
+
+#slider_container{
+  width:670px;
+  height:310px;
+  display:block;
+  position:relative;
+  float:left;
+}
+
+#disp_properties{
+    float: left;
+    margin-left: 27px;
+    width: 280px;
+    position:relative;
+}
+.prop_block1{
+  width: 280px;
+  clear:left;
+  margin:0;
+  padding:0;
+}
+.vert_spacer{
+  height: 20px;
+  display: block;
+  position:relative;
+  width:100%
+}
+ul.prop_links{
+  list-style: none;
+  margin: 20px 0;
+}
+ul.prop_links li{
+  margin: 10px 0;
+}
+a.props_icon{
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    height: 19px;
+    padding: 12px 0 0 60px;
+    text-decoration: underline;
+}
+.icon_basket{
+  background-image: url(images/icon_basket.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  height: 44px;
+}
+.icon_calc{
+  background-image: url(images/icon_calc.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  height: 44px;
+}
+.icon_download{
+  background-image: url(images/icon_download.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  height: 44px;
+}
+.sb_header, .fb_header, .cb_header{
+  clear:both;
+  width:977px;
+  height:30px;
+  font-size: 14px;
+}
+.sb_h_face, .sb_line_face{
+  float:left;
+  width:200px;
+}
+.sb_h_face_colors, .sb_line_face_colors{
+  float:left;
+  width:700px;
+}
+.counts_line{
+clear: both;
+height: 150px;
+position: relative;
+width: 772px;
+}
+.catalog-section-separator{
+  background-color:#efefef;
+  height:6px;
+  width: 100%;
+  display: block;
+  margin: 5px 0;
+  clear: both;
+}
+
+#description_block{
+  width:977px;
+}
+.catalog-section-info{
+float: left;
+height: 190px;
+position: relative;
+width: 200px;
+}
+.counts_block {
+  float: left;
+  height: 152px;
+  margin-top: 27px;
+  width: 700px;
+}
+
+.catalog-section{
+  clear: both;
+  height: 190px;
+  margin-top: 10px;
+  width: 100%;
+}
+.ex_element{
+    float: left;
+    list-style: none outside none;
+    margin-right: 35px;
+    position: relative;
+    width: 180px;
+    max-width: 180px;
+    height: 150px;
+    border: 1px solid lightgray;
+}
+.catalog-section-title{
+color: #3C3C3C;
+font-size: 12px;
+margin-bottom: 10px;
+text-align: left;
+}
+
+.checkbox{
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 13px;
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
+  width: 13px;
+}
+.checked{
+  background-image: url(images/checkbox.png);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+.unchecked{
+  background-image: url(images/checkbox.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+.prev_btn, .next_btn{
+  height: 32px;
+  position: absolute;
+  top: 60px;
+  width: 30px;
+}
+.prev_btn{
+  left:10px;
+}
+.next_btn{
+  right:10px;
+}
+
+.examples_slider{
+float: left;
+height: 152px;
+width: 772px;
+}
+.color_element{
+  cursor:pointer;
+}
+
+.ce_selected{
+  border: 2px solid #E0E0E0;
+  height: 76px;
+  width: 76px !important;
+}
+
+.bx-prev{
+  background-image: url(images/arrow-color-left.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 32px;
+  cursor: pointer;
+  text-indent: -9999px;
+  display: block;
+}
+
+.bx-next{
+  background-image: url(images/arrow-color-right.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 32px;
+  cursor: pointer;
+  text-indent: -9999px;
+  display: block;
+}
+ul.bxslider_examples{
+  position: relative;
+}
+
+div.examples_slider div.bx-wrapper div.bx-viewport {
+  height: 152px !important;
+  padding-left: 4px;
+}
+
+ul.bxslider_examples li{
+/*    float: left;
+    list-style: none outside none;
+    margin-right: 35px;
+    position: relative;
+    width: 180px;
+    max-width: 180px;
+    height: 150px;
+    border: 1px solid lightgray;*/
+}
+.top_left_plate{
+  position: absolute;
+  top:0;
+  left: 0;
+  background-image: url(images/bg_plate_2.png);
+  background-position: left top;
+  background-repeat: none;
+  width: 130px;
+  height: 41px;
+}
+.bottom_right_plate{
+  position: absolute;
+  bottom:0;
+  right: 0;
+  background-image: url(images/bg_plate_1.png);
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  width: 160px;
+  height: 53px;
+}
+.bottom_right_plate span.kitchen_name{
+  display: block;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  margin: 7px 0 0 11px;
+}
+.bottom_right_plate span.kitchen_square{
+  display: block;
+  margin: 3px 0 5px 12px;
+}
+.top_left_plate span{
+  display: block;
+  margin: 10px 0 0 15px;
+  font-weight:bold;
+}
+.plate_text{
+  color: #3C3C3C;
+  font-style: italic;
+  font-size: 12px;
+}

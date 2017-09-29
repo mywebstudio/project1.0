@@ -1,27 +1,4 @@
-<head>
-    <title>Material Admin - Static tables</title>
 
-    <!-- BEGIN META -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="your,keywords">
-    <meta name="description" content="Short explanation about this website">
-    <!-- END META -->
-
-    <!-- BEGIN STYLESHEETS -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
-    <link type="text/css" rel="stylesheet" href="/i/css/admin-theme/bootstrap.css?1422792965" />
-    <link type="text/css" rel="stylesheet" href="/i/css/admin-theme/materialadmin.css?1425466319" />
-    <link type="text/css" rel="stylesheet" href="/i/css/admin-theme/font-awesome.min.css?1422529194" />
-    <link type="text/css" rel="stylesheet" href="/i/css/admin-theme/material-design-iconic-font.min.css?1421434286" />
-    <!-- END STYLESHEETS -->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="/i/js/admin-theme/libs/utils/html5shiv.js?1403934957"></script>
-    <script type="text/javascript" src="/i/js/admin-theme/libs/utils/respond.min.js?1403934956"></script>
-    <![endif]-->
-</head>
 <!-- BEGIN CONTENT-->
 <div id="content">
 
@@ -34,14 +11,14 @@
             <!-- BEGIN INTRO -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="text-primary">Все статьи</h1>
+                    <h1 class="text-primary">Все объекты</h1>
                 </div><!--end .col -->
                 <div class="col-lg-8">
                     <article class="margin-bottom">
                         <p class="lead">
-                            статьи
+                            Объекты
                         </p>
-                        <a href="/admin/article" class="btn ink-reaction btn-raised btn-primary">Добавить статью</a>
+                        <a href="/admin/article" class="btn ink-reaction btn-raised btn-primary">Добавить объект</a>
                     </article>
                 </div><!--end .col -->
             </div><!--end .row -->
@@ -53,38 +30,67 @@
     <section class="style-default-bright">
 
         <div class="section-body">
-            <h2 class="text-primary">Все статьи</h2>
+            <h2 class="text-primary">Все объекты</h2>
 
             <table class="table table-hover">
                 <thead>
                 <tr>
+                    <th></th>
+                    <th>Опубликован</th>
+                    <th>Избранный</th>
+                    <th>Раздел</th>
                     <th>Дата</th>
                     <th>Заголовок</th>
-                    <th>Текст</th>
                     <th class="text-right">Действия</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php foreach($all as $a):?>
                     <tr>
+                        <td><img src="/image/page_image?file=<?=$a->preview?>&w=50&h=50&mode=fitout"></td>
+                        <td>
+                            <label class="checkbox-inline checkbox-styled">
+                                <input type="checkbox" title="Опубликован" class="main" value="1" data-id="<?=$a->article_id?>" <?= $a->published ? 'checked' : '' ?>>
+                            </label>
+                        </td>
+                        <td>
+                            <label class="checkbox-inline checkbox-styled">
+                                <input type="checkbox" title="Избранный" class="featured" value="1" data-id="<?=$a->article_id?>" <?= $a->featured ? 'checked' : '' ?>>
+                            </label>
+                        </td>
+                        <td><?= $g_config['realty'][$a->section] ?></td>
                         <td><?=$a->date?></td>
                         <td><?=$a->title?></td>
-                        <td><?=ShortArticleText(150,$a->full)?></td>
+                        <td><?=ShortArticleText(100,$a->full)?></td>
                         <td class="text-right">
                             <a href="/admin/article?article_id=<?=$a->article_id?>" class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Редактировать"><i class="fa fa-pencil"></i></a>
-                            <button type="button" class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Удалить"><i class="fa fa-trash-o"></i></button>
+                            <button type="button" class="btn btn-icon-toggle delete" data-id="<?=$a->article_id?>"><i class="fa fa-trash-o"></i></button>
                         </td>
                     </tr>
                 <?php endforeach;?>
 
                 </tbody>
             </table>
+            <div class="col-lg-12 text-center">
+                <?php IncludeCom("dev/paginator2", array
+                (
+                    "pageUrl"      => GetCurUrl('page=' . M_PAGINATOR_PAGE),
+                    "firstPageUrl" => GetCurUrl('page=' . M_DELETE_PARAM),
+                    "total"        => $total,
+                    "perPage"      => $per_page,
+                    "curPage"      => $page
+                ))?>
+                <!--Pagination Listed End-->
+            </div><!--Pagination end-->
+            
         </div><!--end .section-body -->
     </section>
     <!-- END TABLE HOVER -->
 
 </div><!--end #content-->
 <!-- END CONTENT -->
+
+
 
 <!-- BEGIN JAVASCRIPT -->
 <script src="/i/js/admin-theme/libs/jquery/jquery-1.11.2.min.js"></script>
@@ -102,3 +108,88 @@
 <script src="/i/js/admin-theme/core/source/AppVendor.js"></script>
 <script src="/i/js/admin-theme/core/demo/Demo.js"></script>
 <!-- END JAVASCRIPT -->
+<script>
+    $('.delete').click(function () {
+
+        var id = $(this).attr('data-id');
+
+        $.ajax({
+            url: "/processorModule/project/is_removed",
+            type: "POST",
+            datatype: 'json',
+            data: {
+                id: id,
+                hash: '<?= $_COOKIE['auto_admin_auth_pwd_hash']?>',
+                login: '<?= $_COOKIE['auto_admin_auth_login'] ?>'
+            },
+            success: function (jsondata) {
+                console.log(jsondata);
+                var res = JSON.parse(jsondata);
+
+                if (res.status == 'ERROR') {
+                    toastr["error"]('', res.msg);
+                }
+                if (res.status == 'OK') {
+                    toastr["success"]('Успех', res.msg);
+                    location.reload();
+                }
+            }
+        });
+    });
+</script>
+
+<!-- меняем публикацию  -->
+<script>
+    $('.main').change(function () {
+        var inp = $(this).prop('checked');
+        var id = $(this).attr('data-id');
+        var val = 1;
+        if(inp == false) val = 0;
+        $.ajax({
+            url: "/processorModule/project/pub",
+            type: "POST",
+            datatype: 'json',
+            data: {
+                hash: '<?= $_COOKIE['auto_admin_auth_pwd_hash']?>',
+                login: '<?= $_COOKIE['auto_admin_auth_login'] ?>',
+                value: val,
+                id: id
+            },
+            success: function (jsondata) {
+                var res = JSON.parse(jsondata);
+
+                if (res.status == 'OK') {
+                    toastr["success"]('', 'Изменения сохранены');
+                }
+            }
+        });
+    });
+</script>
+
+<!-- меняем публикацию  -->
+<script>
+    $('.featured').change(function () {
+        var inp = $(this).prop('checked');
+        var id = $(this).attr('data-id');
+        var val = 1;
+        if(inp == false) val = 0;
+        $.ajax({
+            url: "/processorModule/project/fet",
+            type: "POST",
+            datatype: 'json',
+            data: {
+                hash: '<?= $_COOKIE['auto_admin_auth_pwd_hash']?>',
+                login: '<?= $_COOKIE['auto_admin_auth_login'] ?>',
+                value: val,
+                id: id
+            },
+            success: function (jsondata) {
+                var res = JSON.parse(jsondata);
+
+                if (res.status == 'OK') {
+                    toastr["success"]('', 'Изменения сохранены');
+                }
+            }
+        });
+    });
+</script>

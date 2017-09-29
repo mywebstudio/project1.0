@@ -1,0 +1,146 @@
+//
+//	function updatePreviewPhoto(picID){
+//		$(".kitchens-preview-pics").hide();
+//		$("#kitchen-photo-id-"+picID).show();
+//	}
+//	function updateColors(val){
+//		//alert("val = "+val);
+//		if(val == 0){
+//			$(".select-color-work").hide();
+//		}
+//		else{
+//			$(".select-color-work").show();
+//		}
+//		$("#selected-color").val("");
+//		
+//		$(".face_line").hide();
+//		$(".face-color-unique-id-"+val).show();
+//	
+//		$(".face-picture").hide();
+//		$(".face-picture-"+val).show();
+//	}
+//	function updateSizes(val){
+//		$(".kitchen-sizes").each(function(index){
+//			if (val==1 && index==0){
+//				$(this).show();
+//			}
+//			else if( (val==2 || val==3) && (index==0 || index==1) ){
+//				$(this).show();
+//			}
+//			else if(val==4 && (index==0 || index==1 || index==2)){
+//				$(this).show();
+//			}
+//			else{
+//				$(this).children().val("");
+//				$(this).hide();
+//			}
+//			//if(index>=val) {
+//			//	$(this).children().val("");
+//			//	$(this).hide();
+//			//}
+//			//else	$(this).show();
+//		});
+//	}
+//	
+//	/*
+// * Chained - jQuery non AJAX(J) chained selects plugin
+// *
+// * Copyright (c) 2010-2011 Mika Tuupola
+// *
+// * Licensed under the MIT license:
+// *   http://www.opensource.org/licenses/mit-license.php
+// *
+// */
+//
+//(function($) {
+//
+//    $.fn.chained = function(parent_selector, options) { 
+//        
+//        return this.each(function() {
+//            
+//            /* Save this to self because this changes when scope changes. */            
+//            var self   = this;
+//            var backup = $(self).clone();
+//                        
+//            /* Handles maximum two parents now. */
+//            $(parent_selector).each(function() {
+//                                                
+//                $(this).bind("change", function() {
+//                    $(self).html(backup.html());
+//
+//                    /* If multiple parents build classname like foo\bar. */
+//                    var selected = "";
+//                    $(parent_selector).each(function() {
+//                        selected += "\\" + $(":selected", this).val();
+//                    });
+//                    selected = selected.substr(1);
+//
+//                    /* Also check for first parent without subclassing. */
+//                    /* TODO: This should be dynamic and check for each parent */
+//                    /*       without subclassing. */
+//                    var first = $(parent_selector).first();
+//                    var selected_first = $(":selected", first).val();
+//                
+//                    $("option", self).each(function() {
+//                        /* Remove unneeded items but save the default value. */
+//                        if (!$(this).hasClass(selected) && 
+//                            !$(this).hasClass(selected_first) && $(this).val() !== "") {
+//                                $(this).remove();
+//                        }                        
+//                    });
+//                
+//                    /* If we have only the default value disable select. */
+//                    if (1 == $("option", self).size() && $(self).val() === "") {
+//                        $(self).attr("disabled", "disabled");
+//                    } else {
+//                        $(self).removeAttr("disabled");
+//                    }
+//                    $(self).trigger("change");
+//                });
+//                
+//                /* Force IE to see something selected on first page load, */
+//                /* unless something is already selected */
+//                if ( !$("option:selected", this).length ) {
+//                    $("option", this).first().attr("selected", "selected");
+//                }
+//	    
+//                /* Force updating the children. */
+//                $(this).trigger("change");             
+//
+//            });
+//        });
+//    };
+//    
+//    /* Alias for those who like to use more English like syntax. */
+//    $.fn.chainedTo = $.fn.chained;
+//    
+//})(jQuery);
+//
+//	
+//
+//$(document).ready(function(){
+//	$("#kitchen_faces").chained("#kitchen_models");
+//});
+//
+//
+//
+//
+//$('.color_element').bind('mouseup', function(){
+//  var v_cur_face = $(this).attr('face');
+//  var v_cur_slide = $(this).attr('slide');
+//	
+//	$("#selected-color").val(v_cur_slide);
+//	
+//  $('input[name=_cur_face]').val($('#face_'+v_cur_face).attr('title'));
+//  $('input[name=_cur_face]').attr('z',$('#face_'+v_cur_face).attr('title'));
+//  $('span.checkbox').removeClass('checked');
+//  $('span.checkbox').addClass('unchecked');
+//  $('span#face_'+v_cur_face).removeClass('unchecked');
+//  $('span#face_'+v_cur_face).addClass('checked');
+//  $('.color_element img').removeClass('ce_selected');
+//  $('#face_'+v_cur_face+'_ce_'+v_cur_slide+' img').addClass('ce_selected')
+//  $('input[name=_cur_color]').val($('#face_'+v_cur_face+'_ce_'+v_cur_slide+' img').attr('title'));
+//  $('input[name=_cur_color]').attr('z',$('#face_'+v_cur_face+'_ce_'+v_cur_slide+' img').attr('title'));
+///*  slider = $('.bxslider_'+cur_face).bxSlider();
+//  slider.goToSlide(0);*/
+//});

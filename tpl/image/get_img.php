@@ -75,7 +75,7 @@ if ($w || $h)
             $canvas->filledRectangle(0, 0, $w, $h, $wImgBack->allocateColor($fillColor[0], $fillColor[1], $fillColor[2]));
 
 
-           $watermark = $watermark->resize(200);
+            $watermark = $watermark->resize(200);
             $wImg = $wImgBack->merge($wImg, 'right', 'top');
             $wImg = $wImg->merge($watermark,'right', 'top',100);
         }
@@ -112,4 +112,4 @@ else
     // BrowserDataCache::OutFile($thumbImg);
     BrowserDataCache::OutFile($srcImg);
 }
-?>
+?> 

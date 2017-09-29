@@ -1,36 +1,44 @@
-<div class="uk-container uk-container-center">
-    <div class="box_header">
+<header>
+    <div class="container">
+        <!-- <a href="/" class="logo"><img src="img/logo.png" alt="scavolini"></a> -->
+        <a href="index.html" class="logo"><img src="/i/image/logo.png" title="scav-logo.jpg" alt="scav-logo.jpg"/></a>
+        <div class="phones">
+            <!-- <a href="tel:74957408393" class="phones__item">+7 (495) 740 83 93</a>
+            <a href="tel:79266411140" class="phones__item">+7 (926) 641 11 40</a> -->
+            <a href="tel:79266411140" class="phones__item">+7 (978) 750-750-73 </a>
+            <!-- <a href="#" class="phones__order">Р·Р°РєР°Р·Р°С‚СЊ Р·РІРѕРЅРѕРє</a> -->
 
-        <div class="top_info">
-           <a href="/"><img src="/i/image/logotip.png"><em>Корвет Крым</em><br><strong>агенство недвижимости</strong></a>
-           
-           <p>+7 (978) 750 73 40<br>
-+7 (978) 750 73 40</p>
-           
+
         </div>
+        <div class="btn-sandwich"><i class="fa fa-navicon"></i></div>
+        <nav class="main-nav">
+            <div class="main-nav__close"><i class="fa fa-close"></i></div>
+
+            <ul id="horizontal-multilevel-menu">
+
+
+                <li><a href="/catalog" class="root-item">Каталог</a>
+                    <ul>
+                        
+                        <li><a href="/catalog?section=1">Кухни «Классика»</a></li>
+
+
+                        <li><a href="/catalog?section=2">Кухни «Модерн»</a></li>
+                        
+                    </ul>
+                </li>
+
+                <li><a href="/services" class="root-item">Услуги</a></li>
+                
+                <li><a href="/about" class="root-item">О компании</a></li>
+                
+                <li><a href="/contacts" class="root-item">Контакты</a></li>
+
+
+
+
+            </ul>
+            <div class="menu-clear-left"></div>
+        </nav>
     </div>
-
-
-</div>
-
-<div class="uk-container uk-container-center">
-
-<nav class="uk-navbar top_menu">
-    <ul class="uk-navbar-nav uk-margin-left uk-navbar-nav-center line_a_top">
-        <li class="<?= $cur == 1 ? 'uk-active' : '' ?>"><a href="/">Главная</a></li>
-        <li class="<?= $cur == 2 ? 'uk-active' : '' ?>"><a href="/items">Недвижимость</a></li>
-        <li class="<?= $cur == 3 ? 'uk-active' : '' ?>"><a href="/pages?section=1">Новости</a></li>
-        <li class="<?= $cur == 4 ? 'uk-active' : '' ?>"><a href="/pages?section=2">Услуги</a></li>
-        <li class="<?= $cur == 5 ? 'uk-active' : '' ?>"><a href="/about">О нас</a></li>
-        <li class="<?= $cur == 6 ? 'uk-active' : '' ?>"><a href="/contacts">Контакты</a></li>
-        <li class="uk-navbar-content uk-navbar-flip  uk-hidden-small">
-            <form class="uk-form uk-margin-remove uk-display-inline-block" method="get" action="/items" >
-                <input type="text" name="search" placeholder="Поиск" class="uk-my-input">
-            </form>
-        </li>
-    </ul>
-
-</nav>
-</div>
-
-
+</header>

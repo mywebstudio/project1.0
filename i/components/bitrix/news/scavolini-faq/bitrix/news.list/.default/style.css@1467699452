@@ -1,0 +1,54 @@
+table.faq-item {
+    border-collapse:collapse; 
+    border:0; 
+    width:100%;
+    margin:30px 0 50px 0;
+}
+
+table.faq-item td {
+    vertical-align:top;
+    text-align:left;
+}
+
+table.faq-item td.qu, table.faq-item td.ans {
+    padding:15px 20px 15px 0;
+    width:45px;
+}
+
+table.faq-item td.qu-text {
+    padding:15px 15px 5px 15px;
+}
+
+table.faq-item td.ans-text {
+    padding:5px 15px 15px 15px;
+    background:#f2f2f2;
+}
+
+span.name-user {color:#CC0001; font-weight:bold;}
+
+a.ask-top {font-size:18px;}
+
+a.ask-bottom {
+    background: #CC0001;
+    color: #FFFFFF !important;
+    display: inline-block;
+    height: 28px;
+    padding-top: 10px;
+    margin-right:25px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 168px;
+}
+
+a.more {
+    background: #BCBCBC;
+    color: #FFFFFF !important;
+    display: inline-block;
+    height: 28px;
+    padding-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 168px;
+}

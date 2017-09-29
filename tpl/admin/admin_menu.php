@@ -46,53 +46,22 @@
                 </a>
                 <!--start submenu -->
                 <ul>
-                    <li><a href="/admin/projects"><span class="title">Все объекты</span></a></li>
+                    <li><a href="/admin/articles"><span class="title">Все объекты</span></a></li>
                     <li class="gui-folder">
                         <a href="javascript:void(0);">
                             <span class="title">Создать</span>
                         </a>
                         <!--start submenu -->
                         <ul>
-                            <li><a href="/admin/project"><span class="title">объект</span></a></li>
+                            <li><a href="/admin/article"><span class="title">объект</span></a></li>
                         </ul><!--end /submenu -->
                     </li><!--end /submenu-li -->
                 </ul><!--end /submenu -->
             </li><!--end /menu-li -->
             <!-- END LEVELS -->
 
-            <!-- BEGIN LEVELS -->
-            <li class="gui-folder">
-                <a>
-                    <div class="gui-icon"><i class="fa fa-star fa-fw"></i></div>
-                    <span class="title">Статьи</span>
-                </a>
-                <!--start submenu -->
-                <ul>
-                    <li><a href="/admin/news"><span class="title">Все статьи</span></a></li>
-                    <li class="gui-folder">
-                        <a href="javascript:void(0);">
-                            <span class="title">Создать</span>
-                        </a>
-                        <!--start submenu -->
-                        <ul>
-                            <li><a href="/admin/new"><span class="title">Статья</span></a></li>
-                        </ul><!--end /submenu -->
-                    </li><!--end /submenu-li -->
-                </ul><!--end /submenu -->
-            </li><!--end /menu-li -->
-            <!-- END LEVELS -->
+ 
 
-
-
-            <!-- BEGIN LEVELS -->
-            <li class="gui-folder">
-                <a href="/admin/emails">
-                    <div class="gui-icon"><i class="fa fa-envelope fa-fw"></i></div>
-                    <span class="title">Подписчики</span>
-                </a>
-                <!--start submenu -->
-
-            </li><!--end /menu-li -->
             <!-- END LEVELS -->
 
             <!-- BEGIN LEVELS -->
