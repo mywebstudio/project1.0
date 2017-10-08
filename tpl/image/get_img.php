@@ -14,6 +14,8 @@ $file = empty($file) ? "" : basename(str_replace("..", '', $file));
 $w = empty($width)  ? 0 : abs(intval($width));
 $h = empty($height) ? 0 : abs(intval($height));
 
+$w = min($w, $g_config['get_img']['max_w']);
+$h = min($h, $g_config['get_img']['max_h']);
 
 $w = $w ? $w : null;
 $h = $h ? $h : null;
@@ -57,14 +59,12 @@ if ($w || $h)
     {
         FileSys::MakeDir(dirname($thumbImg));
         $wImg = WideImage::load($srcImg);
-        $watermark = WideImage::load('http://korvet.net/i/image/logo.png');
 
         if ($w && $h && $mode !== "scale")
         {
-
             if ($mode === "fitout")
             {
-                $wImg = $wImg->resize($w, $h, 'outside', 'down')->crop('right', 'top', $w, $h);
+                $wImg = $wImg->resize($w, $h, 'outside', 'down')->crop('center', 'middle', $w, $h);
             }
             elseif ($mode === "fitin")
             {
@@ -73,35 +73,23 @@ if ($w || $h)
             $wImgBack = WideImage::createTrueColorImage($w, $h);
             $canvas = $wImgBack->getCanvas();
             $canvas->filledRectangle(0, 0, $w, $h, $wImgBack->allocateColor($fillColor[0], $fillColor[1], $fillColor[2]));
-
-
-            $watermark = $watermark->resize(200);
-            $wImg = $wImgBack->merge($wImg, 'right', 'top');
-            $wImg = $wImg->merge($watermark,'right', 'top',100);
+            $wImg = $wImgBack->merge($wImg, 'center', 'middle');
         }
         else // scale
         {
-            $watermark = $watermark->resize(200);
             $wImg = $wImg->resizeDown($w, $h, 'inside', 'down');
-            $wImg = $wImg->merge($watermark,'right', 'top', 100);
         }
 
         if ($ext == "jpg" || $ext == "jpeg" || $ext == "jpe")
         {
-//            $watermark = $watermark->resize(100, 65);
-            $wImg = $wImg->merge($watermark,'right', 'top', 100);
             $wImg->saveToFile($thumbImg, 90); // Без этого хака jpg изображение не сохранится
         }
         else
         {
-//            $watermark = $watermark->resize(100, 65);
-            $wImg = $wImg->merge($watermark,'right', 'top', 100);
             $wImg->saveToFile($thumbImg);
         }
         // !!! Здесь можно добавить наложение watermark. Пример:
         // Watermark($thumbImg, $thumbImg);
-//        if($w > 600)
-//        Watermark($watermark, $thumbImg);
     }
     BrowserDataCache::OutFile($thumbImg);
 }
@@ -112,4 +100,4 @@ else
     // BrowserDataCache::OutFile($thumbImg);
     BrowserDataCache::OutFile($srcImg);
 }
-?> 
+?>

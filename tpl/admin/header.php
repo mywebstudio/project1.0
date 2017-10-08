@@ -6,7 +6,7 @@
                 <li class="header-nav-brand" >
                     <div class="brand-holder">
                         <a href="<?php SiteRoot('admin/home') ?>">
-                            <span class="text-lg text-bold text-primary">Корвет недвижимость</span>
+                            <span class="text-lg text-bold text-primary">Атлас люкс Севастополь</span>
                         </a>
                     </div>
                 </li>

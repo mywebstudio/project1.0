@@ -13,5 +13,18 @@ if ($article_id) {
     if(!is_array($gallery)) { $gallery = array(); $gallery[] = json_decode($article->gallery, true); }
 }
 
+$new = new ArticleModel();
+
+$filer = array();
+$filer["is_removed"] = 0;
+$filer["published"] = 1;
+
+$ids = $new->filter->Filter($filer, 0, 100, 'sort', false);
+
+$all = array();
+foreach($ids as $id) {
+    $all[] = new ArticleModel($id);
+}
+
 
 ?>

@@ -1,2 +1,0 @@
-/*@import "css/main.min.css";*/
-.cat-main__item figure figcaption{background-color: hsla(0,0%,100%,.7) !important;color:#272c31 !important}.cat-items__item figure figcaption{background-color: hsla(0,0%,100%,.7) !important;color: #272c31 !important}.count-price__item figure figcaption{background-color:rgba(39,44,49,.6) !important}header .cart{float:right}header .cart a{color:#272c31;}

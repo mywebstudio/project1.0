@@ -22,6 +22,7 @@ class ArticleModel extends Model
                                     `counter`  INT DEFAULT 1,
                                     `section`  INT DEFAULT 1,
                                     `sort`  INT DEFAULT 1,
+                                    `price`  VARCHAR(512) CHARACTER SET utf8 COLLATE utf8_general_ci,
                                     `gallery` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci,                
                                     `preview`     VARCHAR(1024) CHARACTER SET utf8 COLLATE utf8_general_ci,
                                     `date`        DATE NULL,

@@ -20,7 +20,7 @@ if($a) {
 
         if (!empty($_FILES['file']['tmp_name']) && is_uploaded_file($_FILES['file']['tmp_name'])) {
 
-            move_uploaded_file($_FILES['file']['tmp_name'], '/home/a0030635/domains/a0030635.xsph.ru/public_html/upl/articles_preview/' . $_FILES['file']['name']);
+            move_uploaded_file($_FILES['file']['tmp_name'], '/home/a0147451/domains/a0147451.xsph.ru/public_html/upl/articles_preview/' . $_FILES['file']['name']);
             if(Post('id')) {
                 $newsModel = new ArticleModel(Post('id'));
                 $gallery = json_decode($newsModel->gallery, true);

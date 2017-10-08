@@ -12,7 +12,6 @@ require_once BASEPATH . 'core/config/main.php';
 
 
 
-
 $g_config['catalog'] = array();
 
 define("Classic", 1);
@@ -23,7 +22,3 @@ $g_config['catalog'][Modern] = "Кухни Современные";
 
 
 ?>
-
-
-
-

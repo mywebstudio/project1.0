@@ -39,8 +39,8 @@
                     <th>Опубликован</th>
                     <th>Избранный</th>
                     <th>Раздел</th>
-                    <th>Дата</th>
                     <th>Заголовок</th>
+                    <th>Текст</th>
                     <th class="text-right">Действия</th>
                 </tr>
                 </thead>
@@ -58,8 +58,7 @@
                                 <input type="checkbox" title="Избранный" class="featured" value="1" data-id="<?=$a->article_id?>" <?= $a->featured ? 'checked' : '' ?>>
                             </label>
                         </td>
-                        <td><?= $g_config['realty'][$a->section] ?></td>
-                        <td><?=$a->date?></td>
+                        <td><?= $g_config['catalog'][$a->section] ?></td>
                         <td><?=$a->title?></td>
                         <td><?=ShortArticleText(100,$a->full)?></td>
                         <td class="text-right">
@@ -108,33 +107,36 @@
 <script src="/i/js/admin-theme/core/source/AppVendor.js"></script>
 <script src="/i/js/admin-theme/core/demo/Demo.js"></script>
 <!-- END JAVASCRIPT -->
+
+
 <script>
     $('.delete').click(function () {
 
         var id = $(this).attr('data-id');
 
-        $.ajax({
-            url: "/processorModule/project/is_removed",
-            type: "POST",
-            datatype: 'json',
-            data: {
-                id: id,
-                hash: '<?= $_COOKIE['auto_admin_auth_pwd_hash']?>',
-                login: '<?= $_COOKIE['auto_admin_auth_login'] ?>'
-            },
-            success: function (jsondata) {
-                console.log(jsondata);
-                var res = JSON.parse(jsondata);
+        if(confirm(" Точно удалить? "))
+            $.ajax({
+                url: "/processorModule/articles/is_removed",
+                type: "POST",
+                datatype: 'json',
+                data: {
+                    id: id,
+                    hash: '<?= $_COOKIE['auto_admin_auth_pwd_hash']?>',
+                    login: '<?= $_COOKIE['auto_admin_auth_login'] ?>'
+                },
+                success: function (jsondata) {
+                    console.log(jsondata);
+                    var res = JSON.parse(jsondata);
 
-                if (res.status == 'ERROR') {
-                    toastr["error"]('', res.msg);
+                    if (res.status == 'ERROR') {
+                        toastr["error"]('', res.msg);
+                    }
+                    if (res.status == 'OK') {
+                        toastr["success"]('Успех', res.msg);
+                        location.reload();
+                    }
                 }
-                if (res.status == 'OK') {
-                    toastr["success"]('Успех', res.msg);
-                    location.reload();
-                }
-            }
-        });
+            });
     });
 </script>
 
@@ -146,7 +148,7 @@
         var val = 1;
         if(inp == false) val = 0;
         $.ajax({
-            url: "/processorModule/project/pub",
+            url: "/processorModule/articles/pub",
             type: "POST",
             datatype: 'json',
             data: {
@@ -174,7 +176,7 @@
         var val = 1;
         if(inp == false) val = 0;
         $.ajax({
-            url: "/processorModule/project/fet",
+            url: "/processorModule/articles/fet",
             type: "POST",
             datatype: 'json',
             data: {

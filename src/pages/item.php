@@ -1,5 +1,5 @@
 <?php
-$article_id = new ProjectModel();
+$article_id = new ArticleModel();
 
 $alias = Get("alias");
 
@@ -14,7 +14,7 @@ else {
 }
 
 
-$article  = new ProjectModel($id);
+$article  = new ArticleModel($id);
 
 
 if ($article->is_removed) {
@@ -29,26 +29,25 @@ $article->counteradd();
 $article->initSEO();
 
 
-$section = $g_config['realty'][$article->section];
-$sectionlink = "/items?section=$article->section";
+
+//$section = $g_config['catalog'][$article->section];
+$sectionlink = "/catalog?section=$article->section";
 
 $slides = array();
 if($article->gallery) $slides = json_decode($article->gallery);
 
 
 
-$articleModel = new ProjectModel();
+$articleModel = new ArticleModel();
 $filer = array();
 $filer["is_removed"] = 0;
 $filer["published"] = 1;
 
-if($article->section) $filer["section"] = $article->section;
-
-$ids   = $articleModel->filter->Filter($filer, 0, 4, 'date', true);
+$ids   = $articleModel->filter->Filter($filer, 0, 50, 'sort', true);
 
 $hot = array();
 foreach($ids as $id)
 {
-    $hot[] = new ProjectModel($id);
+    $hot[] = new ArticleModel($id);
 }
 ?>

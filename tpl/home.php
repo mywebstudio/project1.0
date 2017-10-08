@@ -4,62 +4,28 @@
     <div class="main-slider__diller">
         <div class="container">
             <div class="main-slider__diller-cont">
-                Официальный дилер итальянской фабрики Scavolini
+                Официальный дилер фабрики Atlas Lux в Севастополе
             </div>
         </div>
     </div>
     <div class="slider">
-        <a href="catalog/baltimora/index.html" title="Кухня Baltimora" class="slider__item">
-            <img src="/i/image/sca22.png">
-            <div class="container slider__info">
-                <div class="slider__item__name">Кухня Baltimora</div>
-            </div>
-        </a>
-        <a href="catalog/baccarat/index.html" title="Кухня Baccarat" class="slider__item">
-            <img src="/i/image/sca22.png">
-            <div class="container slider__info">
-                <div class="slider__item__name">Кухня Baccarat</div>
-            </div>
-        </a>
-        <a href="catalog/scenery/index.html" title="Кухня Scenery" class="slider__item">
-            <img src="/i/image/sca22.png">
-            <div class="container slider__info">
-                <div class="slider__item__name">Кухня Scenery</div>
-            </div>
-        </a>
-        <a href="catalog/baltimora-bathroom/index.html" title="Ванная комната Baltimora" class="slider__item">
-            <img src="/i/image/sca22.png">
-            <div class="container slider__info">
-                <div class="slider__item__name">Ванная комната Baltimora</div>
-            </div>
-        </a>
-        <a href="catalog/libera-mente/index.html" title="Кухня LiberaMente" class="slider__item">
-            <img src="/i/image/sca22.png">
-            <div class="container slider__info">
-                <div class="slider__item__name">Кухня LiberaMente</div>
-            </div>
-        </a>
-        <a href="catalog/magnifica/index.html" title="Ванная комната Magnifica" class="slider__item">
-            <img src="/i/image/sca22.png">
-            <div class="container slider__info">
-                <div class="slider__item__name">Ванная комната Magnifica</div>
-            </div>
-        </a>
-        <a href="catalog/diesel/index.html" title="Кухня Diesel" class="slider__item">
-            <img src="/i/image/sca22.png">
-            <div class="container slider__info">
-                <div class="slider__item__name">Кухня Diesel</div>
-            </div>
-        </a>
+        <?php foreach($sides as $a):?>
+            <a href="catalog/<?=$a->alias?>" title="<?=$a->title?>" class="slider__item">
+                <img src="/image/page_image?file=<?=$a->preview?>&mode=scale">
+                <div class="container slider__info">
+                    <div class="slider__item__name"><?=$a->title?></div>
+                </div>
+            </a>
+        <?php endforeach;?>
     </div>
 </div>
 
 
 <main class="content">
     <div class="container product_remove">
-        <h1>Scavolini-shop - лучший выбор итальянских кухонных гарнитуров!</h1>
+        <h1>Кухни АТЛАС-ЛЮКС - безупречный вкус, безупречное качество</h1>
 
-        <div style="text-align: center;"> <iframe width="90%" height="600" src="https://www.youtube.com/embed/zZ-k02634Lw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen=""></iframe> </div>
+        <div style="text-align: center;"> <iframe width="90%" height="600" src="https://www.youtube.com/embed/htMGEEP_kSo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen=""></iframe> </div>
 
         <br />
 

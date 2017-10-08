@@ -53,7 +53,6 @@
                                     <li class="active"><a href="#main">Основное</a></li>
                                     <?php if ($article_id): ?>
                                         <li><a href="#galery">Галерея</a></li>
-
                                     <?php endif; ?>
 
                                 </ul>
@@ -112,11 +111,34 @@
 
 
                                         </div>
+                                        <div class="col-md-6">
+                                            
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-lg" id="price"
+                                                       name="price"
+                                                       value="<?= Post("price", $article_id ? $article->price : NULL) ?>">
+                                                <label for="price">Стоимость</label>
+                                            </div>
+                                             
+                                        </div>
 
                                         <?php if ($article_id): ?>
                                             <div class="col-md-10">
                                                 <div class="form-group">
                                                     <label for="short">Дополнительное описание объекта</label>
+                                                    <div id="inlineContent2" class="col-md-12"
+                                                         contenteditable="true"><?= Post("short", $article_id ? $article->short : '') ?></div>
+                                                    <div class="btn" id="bbb2">сохранить</a>
+                                                        <!--end .col -->
+
+
+                                                    </div><!--end .form-group -->
+                                                </div><!--end .tab-pane -->
+                                            </div><!--end .col -->
+
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <label for="short">Основное описание объекта</label>
                                                     <div id="inlineContent1" class="col-md-12"
                                                          contenteditable="true"><?= Post("full", $article_id ? $article->full : '') ?></div>
                                                     <div class="btn" id="bbb">сохранить</a>
@@ -400,6 +422,31 @@
         });
     </script>
 
+    <!-- меняем сортировку -->
+    <script>
+        $('#price').change(function () {
+            var inp = $(this).val();
+            $.ajax({
+                url: "/processorModule/articles/price",
+                type: "POST",
+                datatype: 'json',
+                data: {
+                    hash: '<?= $_COOKIE['auto_admin_auth_pwd_hash']?>',
+                    login: '<?= $_COOKIE['auto_admin_auth_login'] ?>',
+                    value: inp,
+                    id: <?=$article_id?>
+                },
+                success: function (jsondata) {
+                    var res = JSON.parse(jsondata);
+
+                    if (res.status == 'OK') {
+                        toastr["success"]('', 'Изменения сохранены');
+                    }
+                }
+            });
+        });
+    </script>
+
     <!-- меняем публикацию  -->
     <script>
         $('#published').change(function () {
@@ -519,6 +566,33 @@
                     hash: '<?= $_COOKIE['auto_admin_auth_pwd_hash']?>',
                     login: '<?= $_COOKIE['auto_admin_auth_login'] ?>',
                     value: inp,
+                    id: <?=$article_id?>
+                },
+                success: function (jsondata) {
+                    var res = JSON.parse(jsondata);
+
+                    if (res.status == 'OK') {
+                        toastr["success"]('', 'Изменения сохранены');
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- меняем зоголовок -->
+    <script>
+        //        CKEDITOR.instances['inlineContent1'].afterSetData( function () {
+        $('#bbb2').click(function () {
+            var t = CKEDITOR.instances['inlineContent2'].getData();
+
+            $.ajax({
+                url: "/processorModule/articles/short",
+                type: "POST",
+                datatype: 'json',
+                data: {
+                    hash: '<?= $_COOKIE['auto_admin_auth_pwd_hash']?>',
+                    login: '<?= $_COOKIE['auto_admin_auth_login'] ?>',
+                    value: t,
                     id: <?=$article_id?>
                 },
                 success: function (jsondata) {

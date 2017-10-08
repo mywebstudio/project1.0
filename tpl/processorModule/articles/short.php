@@ -12,7 +12,7 @@ if($a) {
 if(Post('id')) {
     $new = new ArticleModel(Post('id'));
 
-    $new->short = Post('value');
+    $new->short = Post('value', "", M_HTML_FILTER_OFF | M_XSS_FILTER_OFF);
 
     $ret["status"] = 'OK';
 
