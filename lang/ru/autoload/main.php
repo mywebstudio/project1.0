@@ -1,6 +1,6 @@
 <?php
 
-    $g_lang["m_titlePostfix"] = "Корвет Крым";
+    $g_lang["m_titlePostfix"] = "Кухни АТЛАС-ЛЮКС Севастополь ";
     $g_lang["phone"] = "";
     $g_lang["phone2"] = "";
 

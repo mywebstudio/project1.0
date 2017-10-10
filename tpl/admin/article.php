@@ -128,11 +128,7 @@
                                                     <label for="short">Дополнительное описание объекта</label>
                                                     <div id="inlineContent2" class="col-md-12"
                                                          contenteditable="true"><?= Post("short", $article_id ? $article->short : '') ?></div>
-                                                    <div class="btn" id="bbb2">сохранить</a>
-                                                        <!--end .col -->
-
-
-                                                    </div><!--end .form-group -->
+                                                    <div class="btn" id="bbb2">сохранить</div><!--end .form-group -->
                                                 </div><!--end .tab-pane -->
                                             </div><!--end .col -->
 
@@ -141,11 +137,7 @@
                                                     <label for="short">Основное описание объекта</label>
                                                     <div id="inlineContent1" class="col-md-12"
                                                          contenteditable="true"><?= Post("full", $article_id ? $article->full : '') ?></div>
-                                                    <div class="btn" id="bbb">сохранить</a>
-                                                        <!--end .col -->
-
-
-                                                    </div><!--end .form-group -->
+                                                    <div class="btn" id="bbb">сохранить</div><!--end .form-group -->
                                                 </div><!--end .tab-pane -->
                                             </div><!--end .col -->
                                         <?php endif; ?>
@@ -167,7 +159,7 @@
                                                         <div
                                                             class="dz-preview dz-processing dz-image-preview dz-success dz-complete">
                                                             <div class="dz-image">
-                                                                <img data-dz-thumbnail=""
+                                                                <img data-dz-thumbnail="" id="<?=$key?>"
                                                                      src="/image/page_image?file=<?= $g ?>&h=120&w=120&mode=fitin">
                                                             </div>
                                                             <div class="dz-details">
@@ -285,6 +277,18 @@
         });
         myDropzone.on("addedfile", function () {
             toastr["success"]('', 'Файл добавлен');
+//            location.reload();
+        });
+
+        myDropzone.on("dragstart", function (file, file2) {
+            console.log(file);
+            console.log(file2);
+            toastr["success"]('', 'Передвижка');
+//            location.reload();
+        });
+        myDropzone.on("dragend", function (file) {
+            console.log(file);
+            toastr["success"]('', 'Передвижка');
 //            location.reload();
         });
 
@@ -651,7 +655,7 @@
 
                     if (res.status == 'OK') {
                         toastr["success"]('Статья удалена');
-                        window.location.href = "/admin/projects";
+                        window.location.href = "/admin/articles";
                     }
                 }
             });

@@ -2374,9 +2374,6 @@ header .logo {
 	float: left
 }
 
-header .logo img {
-	width: 90px
-}
 
 header .phones {
 	display: inline-block;
@@ -2588,7 +2585,8 @@ header .main-nav ul li:hover ul {
 	display: inline-block;
 	text-transform: uppercase;
 	font-size: .875rem;
-	width: 18.7rem
+	width: 18.7rem;
+	margin-left: 100px;
 }
 
 .main-slider .slider-nav {
@@ -2951,7 +2949,7 @@ header .main-nav ul li:hover ul {
 .under-slider-btns__item {
 	background-color: #fafafa;
 	box-shadow: 0 0 2px rgba(0, 0, 0, .2);
-	padding: 0.3rem  0.5rem;
+	padding: 1.3rem 2rem;
 	text-decoration: none;
 	display: block;
 	margin-top: .2rem;

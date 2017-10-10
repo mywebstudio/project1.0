@@ -13,7 +13,7 @@ if(Post("name") and Post("adress") and Post("phone") and Post("datet")) {
     $mail->CharSet = "UTF8";
 
     $body = 'Поступила заявка с сайта от человека по имени ' . Post("name") . ' <br>Его номер: ' . Post("phone") . ' и адресс ' . Post("adress") .
-        ' <br>Заказал вызов: ' . Post("date1");
+        ' <br>Заказал вызов в : ' . Post("datet");
     $body = mb_convert_encoding($body, "UTF8", "auto");
 
     $mail->IsSMTP(); // telling the class to use SMTP

@@ -1,5 +1,5 @@
 <?php
-$article_id = new ArticleModel();
+$article_id = new PagesModel();
 
 $alias = Get("alias");
 
@@ -14,7 +14,7 @@ else {
 }
 
 
-$article  = new ArticleModel($id);
+$article  = new PagesModel($id);
 
 
 if ($article->is_removed) {
@@ -29,16 +29,12 @@ $article->counteradd();
 $article->initSEO();
 
 
-
-//$section = $g_config['catalog'][$article->section];
-$sectionlink = "/catalog?section=$article->section";
-
 $slides = array();
 if($article->gallery) $slides = json_decode($article->gallery);
 
 
 
-$articleModel = new ArticleModel();
+$articleModel = new PagesModel();
 $filer = array();
 $filer["is_removed"] = 0;
 $filer["published"] = 1;
@@ -48,6 +44,6 @@ $ids   = $articleModel->filter->Filter($filer, 0, 50, 'sort', true);
 $hot = array();
 foreach($ids as $id)
 {
-    $hot[] = new ArticleModel($id);
+    $hot[] = new PagesModel($id);
 }
 ?>

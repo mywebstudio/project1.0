@@ -41,6 +41,7 @@
                     <th>Раздел</th>
                     <th>Заголовок</th>
                     <th>Текст</th>
+                    <th>Порядок</th>
                     <th class="text-right">Действия</th>
                 </tr>
                 </thead>
@@ -61,6 +62,7 @@
                         <td><?= $g_config['catalog'][$a->section] ?></td>
                         <td><?=$a->title?></td>
                         <td><?=ShortArticleText(100,$a->full)?></td>
+                        <td><input type="number" title="Порядок сортировки" class="sort" value="<?=$a->sort?>" data-id="<?=$a->article_id?>" min="0"></td>
                         <td class="text-right">
                             <a href="/admin/article?article_id=<?=$a->article_id?>" class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Редактировать"><i class="fa fa-pencil"></i></a>
                             <button type="button" class="btn btn-icon-toggle delete" data-id="<?=$a->article_id?>"><i class="fa fa-trash-o"></i></button>
@@ -190,6 +192,34 @@
 
                 if (res.status == 'OK') {
                     toastr["success"]('', 'Изменения сохранены');
+                }
+            }
+        });
+    });
+</script>
+
+
+<!-- меняем сортировку -->
+<script>
+    $('.sort').change(function () {
+        var id = $(this).attr('data-id');
+        var inp = $(this).val();
+        $.ajax({
+            url: "/processorModule/articles/sort",
+            type: "POST",
+            datatype: 'json',
+            data: {
+                hash: '<?= $_COOKIE['auto_admin_auth_pwd_hash']?>',
+                login: '<?= $_COOKIE['auto_admin_auth_login'] ?>',
+                value: inp,
+                id: id
+            },
+            success: function (jsondata) {
+                var res = JSON.parse(jsondata);
+
+                if (res.status == 'OK') {
+                    toastr["success"]('', 'Изменения сохранены');
+                    location.reload();
                 }
             }
         });

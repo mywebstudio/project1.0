@@ -1,11 +1,11 @@
-<ul class="uk-pagination">
+<ul class="pagination pagination-lg">
     <?php if (empty($arrowLeft)):?>
-        <li class="uk-disabled">
-            <a href="#"><i class="uk-icon-angle-double-left"></i></a>
+        <li class="disabled">
+            <a href="#">«</a>
         </li>
-    <?php else:?>
+    <?php else:?> 
         <li class="prev-btn">
-            <a href="#"><i class="uk-icon-angle-double-left"></i></a>
+            <a href="#">«</a>
         </li>
     <?php endif;?>
 
@@ -20,7 +20,7 @@
 
     <?php foreach($pagesCenter as $p):?>
         <?php if ($p["is_active"]):?>
-            <li class="uk-active"><span title="Current page is <?= $p["page"]?>"><?= $p["page"]?></span></li>
+            <li class="active"><span title="Current page is <?= $p["page"]?>"><?= $p["page"]?></span></li>
         <?php else:?>
             <li><a href="<?= $p["href"]?>" title="Go to page <?= $p["page"]?>"><?= $p["page"]?></a></li>
         <?php endif;?>
@@ -36,12 +36,12 @@
     <?php endforeach;?>
 
     <?php if (empty($arrowRight)):?>
-        <li class="uk-disabled">
-            <a href="#"><i class="uk-icon-angle-double-right"></i></a>
+        <li class="disabled">
+            <a href="#">»</a>
         </li>
     <?php else:?>
         <li class="next-btn">
-            <a href="#"><i class="uk-icon-angle-double-right"></i></a>
+            <a href="#">»</a>
         </li>
     <?php endif;?>
 </ul>

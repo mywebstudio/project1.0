@@ -23,7 +23,7 @@
                     (
                         'dsn'        => DEBUG_MODE ?
                                             'mysql://root:@localhost/DataBaseName?charset=UTF8' : // Если локалка то локальная БД
-                                            'mysql://a0147451_atlas:5kGuNgY7@localhost/a0147451_atlas?charset=UTF8',    // Если сервер то настоящая БД
+                                            'mysql://a0030635_atlas:E9ynfbBu@localhost/a0030635_atlas?charset=UTF8',    // Если сервер то настоящая БД
                         'pCacheFunc' => '' // Указатель на функцию кеширования данных. Для кеширования в запросах пишите перед текстом запроса "-- CACHE: 10m\n" (10m - ttl кеша)
                     )
         

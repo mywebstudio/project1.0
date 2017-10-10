@@ -1,64 +1,30 @@
 
 <div class="header-height"></div>
-<ul class="breadcrumb-navigation"><li><a href="/" title="Главная">Главная</a></li><li><span>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;</span></li>
-    <li><a href="/catalog" title="Каталог">Каталог</a></li><li><span>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;</span></li>
-    <li><?=$article->title?></li>
-</ul>
+<!--<ul class="breadcrumb-navigation"><li><a href="/" title="Главная">Главная</a></li><li><span>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;</span></li>-->
+<!--    <li><a href="/catalog" title="Каталог">Каталог</a></li><li><span>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;</span></li>-->
+<!--    <li>--><?//=$article->title?><!--</li>-->
+<!--</ul>-->
 
 
 <main class="content">
     <div class="container product_remove">
         <h1><?=$article->title?></h1>
 
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="slider-min">
-
-                        <div class="slider-min__slider">
-                            <?php foreach($slides as $a):?>
-                            <figure data-thumb="/image/page_image?w=77&h=77&mode=fitout&file=<?=$a?>" data-src="/image/page_image?file=<?=$a?>">
-                                <img src="/image/page_image?w=860&h=585&mode=fitout&file=<?=$a?>">
-                            </figure>
-                            <?php endforeach;?>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-3">
-
-                    <div class="under-slider-btns">
-                        <br>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <a href="#modal-calc" class="under-slider-btns__item add_to_cart_button" id="add_to_cart_button" data-uk-modal>
-                                    <i class="fa fa-calculator"></i>
-                                    <span>Онлайн расчёт</span>
-                                </a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="#modal-vizov" class="under-slider-btns__item" data-uk-modal>
-
-                                    <span>Вызов замерщика</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <b><span>Стоимость: </span><?=$article->price?></b>
-
-                    <?=$article->short?>
-                </div>
-            </div>
-
-
-        </div>
-
         <div class="container"> <!-- Описание -->
-            <h2>Описание:</h2>
             <?=$article->full ?>
+
+            <div class="slider-min">
+
+                <div class="slider-min__slider">
+                    <?php foreach($slides as $a):?>
+                        <figure data-thumb="/image/page_image?w=77&h=77&mode=fitout&file=<?=$a?>" data-src="/image/page_image?file=<?=$a?>">
+                            <img src="/image/page_image?w=860&h=585&mode=fitout&file=<?=$a?>">
+                        </figure>
+                    <?php endforeach;?>
+
+                </div>
+
+            </div>
 
         </div>
     </div>

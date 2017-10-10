@@ -3,11 +3,18 @@ Options -Indexes
 RewriteEngine on
 
 RewriteBase /
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 
-RewriteRule ^catalog/(.+)$ /?q=pages/item&alias=$1 [L]
-RewriteRule ^catalog?(.+)$ /?q=pages/list&$1 [L,QSA]
-RewriteRule ^catalog$ /?q=pages/list [L]
+RewriteCond %{HTTP_HOST} ^www.atlaslux-crimea.ru
+RewriteRule (.*) https://atlaslux-crimea.ru/$1 [R=301,L]
 
+RewriteRule ^catalog/(.+)$ /?q=catalog/item&alias=$1 [L]
+RewriteRule ^catalog?(.+)$ /?q=catalog/list&$1 [L,QSA]
+RewriteRule ^catalog$ /?q=catalog/list [L]
+
+
+RewriteRule ^pages-(.+)$ /?q=pages/item&alias=$1 [L]
 
 
 RewriteRule ^singup$ /?q=processorsFolder/singup [L]

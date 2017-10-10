@@ -1,9 +1,9 @@
-<div class="header-height"></div>
-<ul class="breadcrumb-navigation">
-    <li><a href="/" title="Главная">Главная</a></li>
-    <li><span>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;</span></li>
-    <li><a href="/contacts" title="Контакты">Контакты</a></li>
-</ul>
+<!--<div class="header-height"></div>-->
+<!--<ul class="breadcrumb-navigation">-->
+<!--    <li><a href="/" title="Главная">Главная</a></li>-->
+<!--    <li><span>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;</span></li>-->
+<!--    <li><a href="/contacts" title="Контакты">Контакты</a></li>-->
+<!--</ul>-->
 
 
 <main class="content">

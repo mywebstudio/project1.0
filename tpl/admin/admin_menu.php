@@ -60,6 +60,28 @@
             </li><!--end /menu-li -->
             <!-- END LEVELS -->
 
+            <!-- BEGIN LEVELS -->
+            <li class="gui-folder">
+                <a>
+                    <div class="gui-icon"><i class="fa fa-list fa-fw"></i></div>
+                    <span class="title">Страницы</span>
+                </a>
+                <!--start submenu -->
+                <ul>
+                    <li><a href="/admin/pages"><span class="title">Все страницы</span></a></li>
+                    <li class="gui-folder">
+                        <a href="javascript:void(0);">
+                            <span class="title">Добавить</span>
+                        </a>
+                        <!--start submenu -->
+                        <ul>
+                            <li><a href="/admin/page"><span class="title">Страницу</span></a></li>
+                        </ul><!--end /submenu -->
+                    </li><!--end /submenu-li -->
+                </ul><!--end /submenu -->
+            </li><!--end /menu-li -->
+            <!-- END LEVELS -->
+
 
 
             <!-- BEGIN LEVELS -->

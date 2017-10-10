@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="/i/js/ajax/basket.css">
 
-    <link rel="shortcut icon" type="image/x-icon" href="/i/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/i/image/favicon.png" />
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
