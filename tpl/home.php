@@ -10,8 +10,8 @@
     </div>
     <div class="slider">
         <?php foreach($sides as $a):?>
-            <a href="catalog/<?=$a->alias?>" title="<?=$a->title?>" class="slider__item">
-                <img src="/image/page_image?file=<?=$a->preview?>&mode=scale">
+            <a href="catalog/<?=$a->alias?>" title="<?=$a->title?>" class="slider__item" style="background-image:url(/image/page_image?file=<?=$a->preview?>&mode=scale); background-position: 50% 50%; background-size: contain">
+                
                 <div class="container slider__info">
                     <div class="slider__item__name"><?=$a->title?></div>
                 </div>

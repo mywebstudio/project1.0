@@ -29,13 +29,13 @@ if(Post("name") and Post("adress") and Post("phone") and Post("datet")) {
     $mail->Username = "order@xn----9sbhbsgdm3avd0b3c8b.xn--p1ai"; // SMTP account username
     $mail->Password = "YOOnK2ll";        // SMTP account password
 
-    $mail->SetFrom('stuurgurs@yandex.ru', 'korvet.net');
+    $mail->SetFrom('stuurgurs@yandex.ru', 'atlaslux-crimea.ru');
 
     $mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
 
 //    $mail->Subject('Thanks for registering.');
     $mail->MsgHTML($body);
-    $address1 = "stuurgurs@yandex.ru";
+    $address1 = "salon@atlaslux-crimea.ru";
     $mail->AddAddress($address1);
 
     $res = $mail->Send();
