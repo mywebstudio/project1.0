@@ -35,7 +35,7 @@ if(Post("name") and Post("adress") and Post("phone") and Post("datet")) {
 
 //    $mail->Subject('Thanks for registering.');
     $mail->MsgHTML($body);
-    $address1 = "stuurgurs@yandex.ru";
+    $address1 = "salon@atlaslux-crimea.ru";
     $mail->AddAddress($address1);
 
     $res = $mail->Send();
