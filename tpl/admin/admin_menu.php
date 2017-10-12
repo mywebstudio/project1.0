@@ -38,22 +38,88 @@
             <!-- END DASHBOARD -->
 
 
+
             <!-- BEGIN LEVELS -->
             <li class="gui-folder">
                 <a>
-                    <div class="gui-icon"><i class="fa fa-star fa-fw"></i></div>
-                    <span class="title">Кухни</span>
+                    <div class="gui-icon"><i class="fa fa-print fa-fw"></i></div>
+                    <span class="title">Печать</span>
                 </a>
                 <!--start submenu -->
                 <ul>
-                    <li><a href="/admin/articles"><span class="title">Все кухни</span></a></li>
+                    <li><a href="/admin/prints"><span class="title">Все продукты</span></a></li>
                     <li class="gui-folder">
                         <a href="javascript:void(0);">
                             <span class="title">Добавить</span>
                         </a>
                         <!--start submenu -->
                         <ul>
-                            <li><a href="/admin/article"><span class="title">Кухня</span></a></li>
+                            <li><a href="/admin/print"><span class="title">Продукт</span></a></li>
+                        </ul><!--end /submenu -->
+                    </li><!--end /submenu-li -->
+                </ul><!--end /submenu -->
+            </li><!--end /menu-li -->
+            <!-- END LEVELS -->
+            <!-- BEGIN LEVELS -->
+            <li class="gui-folder">
+                <a>
+                    <div class="gui-icon"><i class="fa fa-shopping-cart fa-fw"></i></div>
+                    <span class="title">Продукция</span>
+                </a>
+                <!--start submenu -->
+                <ul>
+                    <li><a href="/admin/prods"><span class="title">Все продукты</span></a></li>
+                    <li class="gui-folder">
+                        <a href="javascript:void(0);">
+                            <span class="title">Добавить</span>
+                        </a>
+                        <!--start submenu -->
+                        <ul>
+                            <li><a href="/admin/prod"><span class="title">Продукт</span></a></li>
+                        </ul><!--end /submenu -->
+                    </li><!--end /submenu-li -->
+                </ul><!--end /submenu -->
+            </li><!--end /menu-li -->
+            <!-- END LEVELS -->
+
+            <!-- BEGIN LEVELS -->
+            <li class="gui-folder">
+                <a>
+                    <div class="gui-icon"><i class="fa fa-user fa-fw"></i></div>
+                    <span class="title">Услуги</span>
+                </a>
+                <!--start submenu -->
+                <ul>
+                    <li><a href="/admin/servs"><span class="title">Все услуги</span></a></li>
+                    <li class="gui-folder">
+                        <a href="javascript:void(0);">
+                            <span class="title">Добавить</span>
+                        </a>
+                        <!--start submenu -->
+                        <ul>
+                            <li><a href="/admin/serv"><span class="title">Услугу</span></a></li>
+                        </ul><!--end /submenu -->
+                    </li><!--end /submenu-li -->
+                </ul><!--end /submenu -->
+            </li><!--end /menu-li -->
+            <!-- END LEVELS -->
+
+            <!-- BEGIN LEVELS -->
+            <li class="gui-folder">
+                <a>
+                    <div class="gui-icon"><i class="fa fa-star fa-fw"></i></div>
+                    <span class="title">Статьи</span>
+                </a>
+                <!--start submenu -->
+                <ul>
+                    <li><a href="/admin/articles"><span class="title">Все статьи</span></a></li>
+                    <li class="gui-folder">
+                        <a href="javascript:void(0);">
+                            <span class="title">Добавить</span>
+                        </a>
+                        <!--start submenu -->
+                        <ul>
+                            <li><a href="/admin/article"><span class="title">Статью</span></a></li>
                         </ul><!--end /submenu -->
                     </li><!--end /submenu-li -->
                 </ul><!--end /submenu -->

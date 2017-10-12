@@ -29,7 +29,7 @@ if(Post("name") and Post("email") and Post("phone") and Post("mod") and Post("st
     $mail->Username = "order@xn----9sbhbsgdm3avd0b3c8b.xn--p1ai"; // SMTP account username
     $mail->Password = "YOOnK2ll";        // SMTP account password
 
-    $mail->SetFrom('stuurgurs@yandex.ru', 'korvet.net');
+    $mail->SetFrom('stuurgurs@yandex.ru', 'atlaslux-crimea.ru');
 
     $mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
 

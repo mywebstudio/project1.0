@@ -35,9 +35,9 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th></th>
                     <th>Опубликован</th>
                     <th>Заголовок</th>
+                    <th>Ссылка</th>
                     <th>Текст</th>
                     <th class="text-right">Действия</th>
                 </tr>
@@ -45,13 +45,13 @@
                 <tbody>
                 <?php foreach($all as $a):?>
                     <tr>
-                        <td><img src="/image/page_image?file=<?=$a->preview?>&w=50&h=50&mode=fitout"></td>
                         <td>
                             <label class="checkbox-inline checkbox-styled">
                                 <input type="checkbox" title="Опубликован" class="main" value="1" data-id="<?=$a->article_id?>" <?= $a->published ? 'checked' : '' ?>>
                             </label>
                         </td>
                         <td><?=$a->title?></td>
+                        <td>pages-<?=$a->alias?></td>
                         <td><?=ShortArticleText(100,$a->full)?></td>
                         <td class="text-right">
                             <a href="/admin/page?article_id=<?=$a->article_id?>" class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Редактировать"><i class="fa fa-pencil"></i></a>

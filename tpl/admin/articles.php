@@ -59,7 +59,7 @@
                                 <input type="checkbox" title="Избранный" class="featured" value="1" data-id="<?=$a->article_id?>" <?= $a->featured ? 'checked' : '' ?>>
                             </label>
                         </td>
-                        <td><?= $g_config['catalog'][$a->section] ?></td>
+                        <td><?= $g_config['article'][$a->section] ?></td>
                         <td><?=$a->title?></td>
                         <td><?=ShortArticleText(100,$a->full)?></td>
                         <td><input type="number" title="Порядок сортировки" class="sort" value="<?=$a->sort?>" data-id="<?=$a->article_id?>" min="0"></td>

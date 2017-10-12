@@ -64,16 +64,7 @@
                                 <div class="tab-pane active" id="main">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="input-group date" id="demo-date-inline"
-                                                 data-date-format="yyyy-mm-dd">
-                                                <div class="input-group-content">
-                                                    <input type="text" class="form-control" id="date"
-                                                           value="<?= Post("date", $article_id ? $article->date : $today) ?>">
-                                                    <label>Дата</label>
-                                                </div>
-                                                    <span class="input-group-addon"><i
-                                                            class="fa fa-calendar"></i></span>
-                                            </div>
+
 
                                             <div class="form-group">
                                                 <div class="checkbox checkbox-styled">
@@ -94,16 +85,13 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group">
-                                                <input type="number" class="form-control" id="sort" placeholder="Порядок сортировки" value="<?= $article_id ? $article->sort : null ?>">
-                                                <label for="default3">Порядок сортировки</label>
-                                            </div>
+
 
 
                                             <div class="form-group">
                                                 <label for="section" class=" control-label">Раздел</label>
                                                 <select id="section" name="roof" class="form-control">
-                                                    <?php foreach ($g_config['catalog'] as $k => $v):?>
+                                                    <?php foreach ($g_config['article'] as $k => $v):?>
                                                         <option value="<?=$k?>" <?= $article_id ? ($article->section == $k) ? 'selected' : null : null  ?>  ><?=$v?></option>
                                                     <?php endforeach;?>
                                                 </select>
@@ -112,32 +100,32 @@
 
                                         </div>
                                         <div class="col-md-6">
-                                            
-                                            <div class="form-group">
-                                                <input type="text" class="form-control input-lg" id="price"
-                                                       name="price"
-                                                       value="<?= Post("price", $article_id ? $article->price : NULL) ?>">
-                                                <label for="price">Стоимость</label>
+                                            <div class="input-group date" id="demo-date-inline"
+                                                 data-date-format="yyyy-mm-dd">
+                                                <div class="input-group-content">
+                                                    <input type="text" class="form-control" id="date"
+                                                           value="<?= Post("date", $article_id ? $article->date : $today) ?>">
+                                                    <label>Дата</label>
+                                                </div>
+                                                    <span class="input-group-addon"><i
+                                                            class="fa fa-calendar"></i></span>
                                             </div>
-                                             
+
+                                            <div class="form-group">
+                                                <input type="number" class="form-control" id="sort" placeholder="Порядок сортировки" value="<?= $article_id ? $article->sort : null ?>">
+                                                <label for="default3">Порядок сортировки</label>
+                                            </div>
                                         </div>
 
                                         <?php if ($article_id): ?>
-                                            <div class="col-md-10">
-                                                <div class="form-group">
-                                                    <label for="short">Дополнительное описание объекта</label>
-                                                    <div id="inlineContent2" class="col-md-12"
-                                                         contenteditable="true"><?= Post("short", $article_id ? $article->short : '') ?></div>
-                                                    <div class="btn" id="bbb2">сохранить</div><!--end .form-group -->
-                                                </div><!--end .tab-pane -->
-                                            </div><!--end .col -->
 
                                             <div class="col-md-10">
                                                 <div class="form-group">
-                                                    <label for="short">Основное описание объекта</label>
+                                                    <div class="btn" id="bbb">сохранить</div>
+                                                    <label for="short">Основное описание</label>
                                                     <div id="inlineContent1" class="col-md-12"
                                                          contenteditable="true"><?= Post("full", $article_id ? $article->full : '') ?></div>
-                                                    <div class="btn" id="bbb">сохранить</div><!--end .form-group -->
+                                                    <!--end .form-group -->
                                                 </div><!--end .tab-pane -->
                                             </div><!--end .col -->
                                         <?php endif; ?>
@@ -255,7 +243,6 @@
 <script src="/i/js/admin-theme/core/demo/Demo.js"></script>
 <script src="/i/js/admin-theme/core/demo/DemoPageContacts.js"></script>
 <script src="/i/js/admin-theme/core/demo/DemoFormComponents.js"></script>
-
 <script src="/i/js/admin-theme/core/demo/DemoFormEditors.js"></script>
 <!-- END JAVASCRIPT -->
 
@@ -279,21 +266,12 @@
             toastr["success"]('', 'Файл добавлен');
 //            location.reload();
         });
-
-        myDropzone.on("dragstart", function (file, file2) {
-            console.log(file);
-            console.log(file2);
-            toastr["success"]('', 'Передвижка');
-//            location.reload();
-        });
-        myDropzone.on("dragend", function (file) {
-            console.log(file);
-            toastr["success"]('', 'Передвижка');
-//            location.reload();
-        });
-
     </script>
 
+
+    <script>
+        CKEDITOR.replace('inlineContent1');
+    </script>
         
     <script>
         $('.removeimg').click(function () {
@@ -407,31 +385,6 @@
             var inp = $(this).val();
             $.ajax({
                 url: "/processorModule/articles/sort",
-                type: "POST",
-                datatype: 'json',
-                data: {
-                    hash: '<?= $_COOKIE['auto_admin_auth_pwd_hash']?>',
-                    login: '<?= $_COOKIE['auto_admin_auth_login'] ?>',
-                    value: inp,
-                    id: <?=$article_id?>
-                },
-                success: function (jsondata) {
-                    var res = JSON.parse(jsondata);
-
-                    if (res.status == 'OK') {
-                        toastr["success"]('', 'Изменения сохранены');
-                    }
-                }
-            });
-        });
-    </script>
-
-    <!-- меняем сортировку -->
-    <script>
-        $('#price').change(function () {
-            var inp = $(this).val();
-            $.ajax({
-                url: "/processorModule/articles/price",
                 type: "POST",
                 datatype: 'json',
                 data: {
@@ -583,32 +536,6 @@
         });
     </script>
 
-    <!-- меняем зоголовок -->
-    <script>
-        //        CKEDITOR.instances['inlineContent1'].afterSetData( function () {
-        $('#bbb2').click(function () {
-            var t = CKEDITOR.instances['inlineContent2'].getData();
-
-            $.ajax({
-                url: "/processorModule/articles/short",
-                type: "POST",
-                datatype: 'json',
-                data: {
-                    hash: '<?= $_COOKIE['auto_admin_auth_pwd_hash']?>',
-                    login: '<?= $_COOKIE['auto_admin_auth_login'] ?>',
-                    value: t,
-                    id: <?=$article_id?>
-                },
-                success: function (jsondata) {
-                    var res = JSON.parse(jsondata);
-
-                    if (res.status == 'OK') {
-                        toastr["success"]('', 'Изменения сохранены');
-                    }
-                }
-            });
-        });
-    </script>
 
     <!-- меняем зоголовок -->
     <script>
